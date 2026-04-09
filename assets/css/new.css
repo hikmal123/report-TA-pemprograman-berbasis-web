@@ -1,0 +1,226 @@
+/* ================================
+   RESET CSS
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   SMOOTH SCROLL
+   ================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animasi fade in untuk section */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   BODY STYLES
+   ================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* ================================
+   DARK MODE TOGGLE (Tambahan baru - Untuk tombol toggle di pojok kanan atas)
+   ================================ */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.toggle-switch {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.toggle-switch:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .toggle-switch {
+    background: rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* ================================
+   BACK TO TOP BUTTON (Tambahan baru - Muncul saat scroll > 300px)
+   ================================ */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    
+    /* Animasi untuk menyembunyikan tombol saat di atas */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background-color: #00c6ff;
+    transform: translateY(-3px);
+}
+
+body.dark-mode #backToTop {
+    background-color: #00c6ff;
+}
+
+body.dark-mode #backToTop:hover {
+    background-color: #0072ff;
+}
+
+/* ================================
+   DARK MODE ENHANCEMENTS (Tambahan baru - Penyesuaian warna untuk elemen spesifik)
+   ================================ */
+body.dark-mode nav {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode main {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode footer {
+    background-color: #121212;
+}
+
+body.dark-mode table {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-mode td, body.dark-mode th {
+    border-color: #333;
+}
+
+body.dark-mode a {
+    color: #00c6ff;
+}
+
+body.dark-mode a:hover {
+    color: #0072ff;
+}
+
+/* ================================
+   RESPONSIVE DESIGN (Tambahan baru - Media query lanjutan untuk perangkat kecil)
+   ================================ */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    main {
+        margin: 20px 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td, th {
+        padding: 8px;
+    }
+
+    /* Tambahan untuk tombol back to top di mobile (ukuran lebih kecil) */
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ================================
+   ARTICLE STYLES (Tetap dari kode asli)
+   ================================ */
+article {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #0072ff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode article {
+    background-color: #333;
+    border-left: 4px solid #00c6ff;
+}
+
+article h3 {
+    margin-top: 0;
+}
